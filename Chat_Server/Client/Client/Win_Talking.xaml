@@ -1,0 +1,83 @@
+﻿<Window x:Class="Client.Win_Talking"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Talking" Height="500" Width="620" AllowsTransparency="True" WindowStyle="None" 
+        Background="Transparent" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+        MouseDown="MouseDown_Window" WindowStartupLocation="CenterScreen" ResizeMode="CanResize" Loaded="Window_Loaded" 
+        Closed="WindowTalking_Closed" xmlns:Client="clr-namespace:Client">	
+    <Grid>
+        <Border Margin="0.001,0,-0.001,0" BorderThickness="0.6,0.6,0.6,0.6" CornerRadius="3,3,3,3" BorderBrush="#FF000000" x:Name="OutLine" Background="{x:Null}"/>        
+        <Border CornerRadius="0.5,0.5,5,5" BorderThickness="5,23,5,5" TextBlock.FontSize="19" TextBlock.Foreground="#FFFFFFFF" Visibility="Visible" x:Name="BackFrame">
+            <Border.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#26F0E8E8" Offset="0"/>
+                    <GradientStop Color="#26F0E8E8" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF18A2DD" Offset="0.009"/>
+                    <GradientStop Color="#FF18A2DD" Offset="0.522"/>
+                    <GradientStop Color="#FF18A2DD" Offset="0.942"/>
+                    <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Border HorizontalAlignment="Left" Margin="6,2,0,0" VerticalAlignment="Top" Width="20" Height="20" BorderThickness="1,1,1,1" BorderBrush="#FF000000" CornerRadius="3,3,3,3">
+            <Image x:Name="UserImageIcon" Stretch="Fill" Height="20" Width="20" Source="/BackImage/header.ico"/>
+        </Border>
+        <TextBlock x:Name="FriendNickName" HorizontalAlignment="Left" Margin="27,4,0,0" VerticalAlignment="Top" Width="Auto" Height="20" Text="" />
+        <TextBlock x:Name="Minimize" Text="-" FontSize="24" FontFamily="SimHei" Style="{StaticResource TextBlockStateStyle}" Margin="0,-2,37.742,0" HorizontalAlignment="Right" Width="15" Cursor="Hand" MouseDown="MouseDown_Minimize" ToolTip="最小化" Height="15" VerticalAlignment="Top" FontWeight="Bold" />
+    	<Client:Revert x:Name="RevertWindow" Margin="587,6,22,482" Visibility="Hidden" Style="{StaticResource RevertWindowStyle}" ToolTip="还原" Cursor="Hand" HorizontalAlignment="Right" VerticalAlignment="Top" MouseLeftButtonDown="RevertWindow_MouseLeftButtonDown"/>
+    	<Border x:Name="Maximize" HorizontalAlignment="Right" Margin="0,7,23.082,0" Style="{StaticResource BorderStyle}" VerticalAlignment="Top" Width="11" Height="9" ToolTip="最大化" MouseLeftButtonDown="Maximize_MouseLeftButtonDown" Cursor="Hand" BorderBrush="#FF000000" BorderThickness="1,2,1,1" Background="#00FFFFFF"/>
+        <TextBlock x:Name="WinClose" Text="×" ToolTip="关闭" MouseDown="MouseDown_Exit" Style="{StaticResource TextBlockStateStyle}" Cursor="Hand" Margin="0,3,4.082,0" HorizontalAlignment="Right" Width="15" Height="16.24" VerticalAlignment="Top" FontWeight="Bold" FontFamily="SimSun" FontSize="15"/>    	
+    	<TextBlock x:Name="Dictum" Margin="29,25,230,0" VerticalAlignment="Top" Width="Auto" Height="15" SnapsToDevicePixels="True" />
+    	<RichTextBox x:Name="ViewMessgeBox" Margin="8,58,149,174.039" IsEnabled="True" IsReadOnly="True" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" SnapsToDevicePixels="True" TextChanged="ViewMessgeBox_TextChanged" HorizontalScrollBarVisibility="Auto">
+    		<FlowDocument/>
+    	</RichTextBox>
+    	<Border x:Name="FontColumn" Margin="9,0,150,175.129" Height="28" VerticalAlignment="Bottom" Visibility="Hidden" Background="#FFD3F2FF" BorderBrush="#FF2CAEE7" BorderThickness="0,1,0,0">
+    		<StackPanel Width="459" Height="28" Orientation="Horizontal" HorizontalAlignment="Left" Visibility="Visible">
+    			<ComboBox x:Name="FontFamilyBox" Width="90" IsSynchronizedWithCurrentItem="True" SelectionChanged="FontFamilyBox_SelectionChanged" Visibility="Visible" Margin="5,0,0,0" Height="20" SnapsToDevicePixels="True" Background="#FFFFFFFF" BorderBrush="#FF00A3EB" Style="{DynamicResource ComboBoxFontStyle}" />
+    			<ComboBox x:Name="FontSizeBox" Width="45" IsSynchronizedWithCurrentItem="True" SelectionChanged="FontSizeBox_SelectionChanged" Visibility="Visible" Margin="15,0,0,0" Height="20" SnapsToDevicePixels="True" Background="#FFFFFFFF" BorderBrush="#FF00A3EB" Style="{DynamicResource ComboBoxFontStyle}" SelectedIndex="2" />
+                <Border Name="BlodBorder"  Width="25" Height="20" Margin="10,0,0,0" BorderBrush="#FFD3F2FF" BorderThickness="1,1,1,1" MouseEnter="BlodBorder_MouseEnter" MouseLeave="BlodBorder_MouseLeave">
+                    <Image Width="16" Height="16" Source="SysImage\bold.ico" Margin="0,0,0,0" x:Name="Img_FontBlod" ToolTip="粗体" Cursor="Hand" MouseLeftButtonDown="Img_FontBlod_MouseLeftButtonDown"/>
+                </Border>
+                <Border Name="ItalicBorder" Width="25" Height="20" Margin="10,0,0,0" BorderBrush="#FFD3F2FF" BorderThickness="1,1,1,1" MouseEnter="ItalicBorder_MouseEnter" MouseLeave="ItalicBorder_MouseLeave">
+                    <Image Width="16" Height="16" Source="SysImage\Italic.ico" Margin="0,0,0,0" x:Name="Img_FontItalic" ToolTip="斜体" Cursor="Hand" MouseLeftButtonDown="Img_FontItalic_MouseLeftButtonDown"/>
+                </Border>
+                <Border Name="UnderlineBorder" Width="25" Height="20" Margin="10,0,0,0" BorderBrush="#FFD3F2FF" BorderThickness="1,1,1,1" MouseEnter="UnderlineBorder_MouseEnter" MouseLeave="UnderlineBorder_MouseLeave"> 
+                    <Image Width="16" Height="16" Source="SysImage\Underline.ico" Margin="0,0,0,0" x:Name="Img_FontUnderline" ToolTip="下划线" Cursor="Hand" MouseLeftButtonDown="Img_FontUnderline_MouseLeftButtonDown"/>                
+                </Border>
+            </StackPanel>
+    	</Border>
+    	<Border Margin="9.005,0,150,154.023" VerticalAlignment="Bottom" Height="21">
+    		<Border.Background>
+    			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+    				<GradientStop Color="#FF18A2DD" Offset="0"/>
+    				<GradientStop Color="#FFC0E0ED" Offset="0.987"/>
+    			</LinearGradientBrush>
+    		</Border.Background>
+    		<StackPanel Width="132" Height="Auto" HorizontalAlignment="Left" Margin="5,0,0,0" Orientation="Horizontal">
+    			<Image Width="20" Height="20" Source="SysImage\Font.png" Margin="5,0,0,0" x:Name="Img_Font" ToolTip="设置字体" Cursor="Hand" MouseLeftButtonDown="Img_Font_MouseLeftButtonDown" Style="{StaticResource ImageStyle}"/>
+    			<Image Width="20" Height="20" Source="SysImage\Biaoqing.png" Margin="5,0,0,0" x:Name="Img_Biaoqing" ToolTip="选择表情" Style="{StaticResource ImageStyle}"/>
+    			<Image Width="20" Height="15" Source="SysImage\SendImage.png" Margin="5,0,0,0" x:Name="Img_SendPic" ToolTip="发送图片" Cursor="Hand" MouseLeftButtonDown="Img_SendPic_MouseLeftButtonDown" Style="{StaticResource ImageStyle}" />
+    			<Image Width="20" Height="20" Source="SysImage\ScreenShot.png" Margin="5,0,0,0" x:Name="Img_ScreenShot" ToolTip="桌面截图" Style="{StaticResource ImageStyle}"/>
+    			<Image Width="20" Height="20" Source="SysImage\Clock.png" Margin="5,0,0,0" x:Name="Img_ShakeWindow" ToolTip="振你没商量" Cursor="Hand" MouseLeftButtonDown="Img_ShakeWindow_MouseLeftButtonDown" Style="{StaticResource ImageStyle}"/>
+    		</StackPanel>
+    	</Border>
+    	<RichTextBox x:Name="MyMessageBox" Margin="8,0,149,41" Height="114" VerticalAlignment="Bottom" BorderBrush="{x:Null}" Focusable="True" AcceptsTab="True" Grid.IsSharedSizeScope="False" TabIndex="0" SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+    		<FlowDocument/>
+    	</RichTextBox>
+    	<Border HorizontalAlignment="Right" Margin="0,58.988,6,42.002" Width="144" BorderBrush="#FF136ABB" BorderThickness="1,1,1,1" Background="#FFC2E9FE"/>
+    	<ComboBox x:Name="comboBox1" Margin="0,0,149,12" Height="24" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="89" BorderThickness="1,1,1,1" Style="{DynamicResource ComboBoxStyle_Normal}">  		
+    		<ComboBoxItem Content="按Enter键发送消息"/>
+    		<Separator/>
+    		<ComboBoxItem Content="按Ctrl+Enter键发送消息"/>           
+    	</ComboBox>
+    	<Button x:Name="CloseButton" Margin="305,0,242,12" VerticalAlignment="Bottom" Height="24" Content="关闭" Click="CloseButton_Click" SnapsToDevicePixels="True" Width="73" HorizontalAlignment="Right" Style="{DynamicResource TalkButtonStyle}"/>   	
+    	<Button x:Name="SendMessageButton" HorizontalAlignment="Right" Margin="0,0,165,12" VerticalAlignment="Bottom" Width="73" Height="24" Content="发送" BorderBrush="{x:Null}" BorderThickness="1,1,1,1" SnapsToDevicePixels="True" Click="SendMessageButton_Click" IsDefault="True" Style="{DynamicResource TalkButtonStyle}" />
+    	<Image x:Name="FriendImageShow" Stretch="None" Source="ShowImage/CoolShow.png" Width="161.803" HorizontalAlignment="Right" Margin="0,60.04,7.158,0" Height="230.304" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" />
+    	<Image x:Name="MyImageShow" Stretch="None" Source="ShowImage/MaleShow.png" HorizontalAlignment="Right" Width="136.405" Margin="0,0,9.519,43.171" StretchDirection="Both" Height="191.36" VerticalAlignment="Bottom" />
+    </Grid>
+</Window>

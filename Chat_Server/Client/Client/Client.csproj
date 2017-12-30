@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED2CE1E7-8F39-434C-8A68-77D7EAEEB82B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <StartupObject>Client.App</StartupObject>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationIcon>BackImage\header.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>C5B234FE04E957657116CD1A27233EDFF2B6A358</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Client_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <SignManifests>false</SignManifests>
+    <ExpressionBlendVersion>3.0.1938.0</ExpressionBlendVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="PresentationFramework.Luna" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Page Include="Revert.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XAML_Resource\STYLETALKBUTTON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XAML_Resource\StyleTalkComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XAML_Resource\STYLE_COMBOBOXFONTSTYLE.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XAML_Resource\STYLE_EXPANDER.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XAML_Resource\STYLE_MAINTEXTBOX.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Revert.xaml.cs">
+      <DependentUpon>Revert.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="CueDelInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CueInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CueOnline.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XAML_Resource\STYLE_MAINSEARCHBUTTON.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XAML_Resource\STYLE_CHECKBOX.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XAML_Resource\STYLE_MAINTREEVIEWITEM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Win_Chat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Win_Loading.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Win_Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Win_Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Win_Talking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XAML_Resource\STYLE_COMBOBOX.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Win_Login.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>Win_Login.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AchieveMyInfo\FriendListInit.cs" />
+    <Compile Include="ChatManager\ICollectionManager.cs" />
+    <Compile Include="ChatManager\IListener.cs" />
+    <Compile Include="ChatManager\IManager.cs" />
+    <Compile Include="ChatManager\IPopWindowAction.cs" />
+    <Compile Include="ChatManager\Manager.cs" />
+    <Compile Include="ChatManager\PopWindowManager.cs" />
+    <Compile Include="ClassInfo\Application_Init.cs" />
+    <Compile Include="ClassInfo\UserDefinition.cs" />
+    <Compile Include="CueDelInfo.xaml.cs">
+      <DependentUpon>CueDelInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CueOnline.xaml.cs">
+      <DependentUpon>CueOnline.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotifyServerFolder\CueDelWindow.cs" />
+    <Compile Include="NotifyServerFolder\CueWindow.cs" />
+    <Compile Include="ProcessProcotol\ChatProcess.cs" />
+    <Compile Include="ProcessProcotol\ChatViewModel.cs" />
+    <Compile Include="ChatManager\IMetaData.cs" />
+    <Compile Include="ProcessProcotol\ProtocolFactory.cs" />
+    <Compile Include="Window2.xaml.cs">
+      <DependentUpon>Window2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AchieveMyInfo\InitMainWindows.cs" />
+    <Compile Include="CueInfo.xaml.cs">
+      <DependentUpon>CueInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImageExtender\ImageAnimatiorExpender.cs" />
+    <Compile Include="ImageExtender\ImageExpender.cs" />
+    <Compile Include="ImageExtender\ImageInfoExpender.cs" />
+    <Compile Include="ImageExtender\ImageSourceExpender.cs" />
+    <Compile Include="NotifyServerFolder\IpConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ClassInfo\Validate.cs" />
+    <Compile Include="WinEvents\cls_WinLoginEvents.cs" />
+    <Compile Include="WinEvents\cls_WinMainEvents.cs" />
+    <Compile Include="WinEvents\cls_WinTalkingEvents.cs" />
+    <Compile Include="WinEvents\Location.cs" />
+    <Compile Include="WinEvents\loginInit.cs" />
+    <Compile Include="WinEvents\TalkWinModel.cs" />
+    <Compile Include="Win_Chat.xaml.cs">
+      <DependentUpon>Win_Chat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Win_Loading.xaml.cs">
+      <DependentUpon>Win_Loading.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Win_Main.xaml.cs">
+      <DependentUpon>Win_Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Win_Talking.xaml.cs">
+      <DependentUpon>Win_Talking.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BackImage\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BackImage\hide.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BackImage\busyness.gif" />
+    <Resource Include="BackImage\not.gif" />
+    <Resource Include="BackImage\offline.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BackImage\warn.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BackImage\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BackImage\online.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SysImage\531.png" />
+    <Resource Include="SysImage\7589a26e0048d6ca81cb4a9d.gif" />
+    <Resource Include="SysImage\Add.png" />
+    <Resource Include="SysImage\AddFriend.png" />
+    <Resource Include="SysImage\AddGroup.png" />
+    <Resource Include="SysImage\Biaoqing.png" />
+    <Resource Include="SysImage\Chandong.png" />
+    <Resource Include="SysImage\classy_icons_277.png" />
+    <Resource Include="SysImage\Clock.png" />
+    <Resource Include="SysImage\Close.png" />
+    <Resource Include="SysImage\FaceError.gif" />
+    <Resource Include="SysImage\FaceLoading.gif" />
+    <Resource Include="SysImage\Font.png" />
+    <Resource Include="SysImage\FontColor.png" />
+    <Resource Include="SysImage\ImageError.gif" />
+    <Resource Include="SysImage\ImageLoading.gif" />
+    <Resource Include="SysImage\Message.png" />
+    <Resource Include="SysImage\Notify.png" />
+    <Resource Include="SysImage\nt.png" />
+    <Resource Include="SysImage\ProfileZone.png" />
+    <Resource Include="SysImage\Right.png" />
+    <Resource Include="SysImage\ScreenShot.png" />
+    <Resource Include="SysImage\SeachUserInfo.png" />
+    <Resource Include="SysImage\SearchIcon.jpg" />
+    <Resource Include="SysImage\SearchUser.png" />
+    <Resource Include="SysImage\Selected.png" />
+    <Resource Include="SysImage\SendPic.png" />
+    <Resource Include="SysImage\SetColor.png" />
+    <Resource Include="SysImage\Space.png" />
+    <Resource Include="SysImage\Screen.png" />
+    <Resource Include="SysImage\TalkBook.png" />
+    <Resource Include="SysImage\Tooltip_SearchUser.png" />
+    <Resource Include="SysImage\Tooltip_UserS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SysImage\bold.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SysImage\Italic.ico" />
+    <Resource Include="SysImage\underline.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ShowImage\CoolShow.png" />
+    <Resource Include="ShowImage\MaleShow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SysImage\cue.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SysImage\wait.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SysImage\sendImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BackImage\header.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\3.0\WPF\Microsoft.Expression.Blend.WPF.targets" />
+</Project>

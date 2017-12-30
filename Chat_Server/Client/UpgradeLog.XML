@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Client">
+</Property><Property Name="解决方案文件" Value="F:\IM\IM\Client\Client.sln">
+</Property><Property Name="Date" Value="2011年7月27日">
+</Property><Property Name="Time" Value="16:53">
+</Property></Properties><Event ErrorLevel="0" Project="Client" Source="Client\Client.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="Client" Source="Client\Client.csproj" Description="Converted">
+</Event><Event ErrorLevel="2" Project="Client" Source="Client\Client.csproj" Description="无法读取项目文件“Client.csproj”。&#xA;F:\IM\IM\Client\Client\Client.csproj(398,3): 未找到导入的项目“C:\Program Files\MSBuild\Microsoft\Expression\Blend\3.0\WPF\Microsoft.Expression.Blend.WPF.targets”。请确认 &lt;Import&gt; 声明中的路径正确，且磁盘上存在该文件。">
+</Event><Event ErrorLevel="0" Project="" Source="Client.sln" Description="成功转换解决方案">
+</Event><Event ErrorLevel="3" Project="" Source="Client.sln" Description="Converted">
+</Event></UpgradeLog>

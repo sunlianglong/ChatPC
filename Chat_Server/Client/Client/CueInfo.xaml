@@ -1,0 +1,27 @@
+﻿<Window x:Class="Client.CueInfo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="提示" Height="189" Width="279" AllowsTransparency="True" Background="Transparent" WindowStyle="None" MouseDown="MouseDown_Window" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" WindowStartupLocation="Manual" Icon="/BackImage/header.ico">
+    <Grid>        
+        <TextBlock x:Name="TitleLabel" FontSize="14" Margin="4,2,0,0" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Width="58.5" VerticalAlignment="Top" Height="16" Foreground="#FF000000" FontWeight="Bold" ><Run Text="提示"/></TextBlock>
+        <Border Margin="0.001,0,-0.001,0" BorderThickness="0.5,0.5,0.5,0.5" CornerRadius="3,3,3,3" BorderBrush="#FF000000" x:Name="OutLine"/>
+        <Border CornerRadius="0.5,0.5,5,5" BorderThickness="5,22,5,5" TextBlock.FontSize="19" TextBlock.Foreground="#FFFFFFFF" Visibility="Visible" x:Name="BackFrame">
+            <Border.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#26F0E8E8" Offset="0"/>
+                    <GradientStop Color="#26F0E8E8" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF076A94" Offset="1"/>
+                    <GradientStop Color="#FFFFFFFF" Offset="0.473"/>
+                </LinearGradientBrush>
+            </Border.Background>            
+        </Border>        
+        <Button Height="30" HorizontalAlignment="Right" Margin="0,0,18,21" x:Name="Certain" FontFamily="微软雅黑" VerticalAlignment="Bottom" Width="88" Click="Certain_Click" Content="确定" IsDefault="True" Style="{DynamicResource TalkButtonStyle}" />
+        <TextBlock x:Name="WinClose" Text="×" ToolTip="关闭" MouseDown="MouseDown_Exit" Style="{StaticResource TextBlockStateStyle}" Cursor="Hand" Margin="0,3,3.082,0" HorizontalAlignment="Right" Width="15" Height="16.24" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Image x:Name="CueImage" Stretch="Fill" Width="34" Source="/BackImage/warn.gif" HorizontalAlignment="Left" Margin="21,65,0,87" />
+        <TextBlock x:Name="CueInfoText" Width="Auto" FontFamily="微软雅黑" FontSize="12"  Margin="63,76.5,11,0" Text="" Height="17" VerticalAlignment="Top" />
+    </Grid>
+</Window>
