@@ -1,0 +1,44 @@
+﻿<Window x:Class="QQ_presentation.ChangeImg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QQ_presentation"
+        mc:Ignorable="d"
+        Height="460" Width="300"
+        WindowStyle="None" AllowsTransparency="True"  MouseLeftButtonDown="DragWindow" WindowStartupLocation="CenterScreen"
+        Background="Transparent">
+    <Grid Margin="5" Background="White">
+        <Grid.Effect>
+            <DropShadowEffect ShadowDepth="3" Color="Black" Direction="-50" BlurRadius="10" Opacity="0.8"/>
+        </Grid.Effect>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <StackPanel  Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="minus" Click="Min_Click" Width="30" Height="28"  Background="Transparent" Margin="0,0,0,-8" Style="{StaticResource ButtonStyleOne}">
+                <Image Source="Function\appbar.minus.1.png" Height="21" Width="20"/>
+            </Button>
+            <Button x:Name="exit" Click="Close_Click" Width="27"  Background="Transparent" Margin="0,-4,10,-8" Height="32" Style="{StaticResource ButtonStyleOne}">
+                <Image Source="Function\appbar.close.1.png" Height="23" Width="20" Margin="0,5,0,0"/>
+            </Button>
+        </StackPanel>
+        <Grid Grid.Row="2" Grid.RowSpan="2" Background="Gainsboro">
+            <Grid.Effect>
+                <DropShadowEffect ShadowDepth="3" Color="Black" Direction="10" BlurRadius="10" Opacity="0.8"/>
+            </Grid.Effect>
+        </Grid>
+        <Image Name="img_show" Grid.Row="1"/>
+        <StackPanel Grid.Row="2" Grid.RowSpan="2" Background="Transparent">
+            <StackPanel.Effect>
+                <DropShadowEffect ShadowDepth="3" Color="Black" Direction="20" BlurRadius="10" Opacity="0.8"/>
+            </StackPanel.Effect>
+            <Button Name="open" Content="打开图片" Height="50" Width="100" Margin="0,10" FontWeight="Bold" Style="{StaticResource ButtonStyleTwo}" Click="open_Click"/>
+            <Button Name="upload" Content="上传图片" Height="50" Width="100" Margin="0,10" FontWeight="Bold" Style="{StaticResource ButtonStyleTwo}" Click="upload_Click"/>
+            <Button Name="reload" Content="更新图片" Height="50" Width="100" Margin="0,10" FontWeight="Bold" Style="{StaticResource ButtonStyleTwo}" Click="reload_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

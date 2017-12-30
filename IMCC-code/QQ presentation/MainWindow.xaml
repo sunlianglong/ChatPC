@@ -1,0 +1,159 @@
+﻿<Window x:Class="QQ_presentation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="540" Width="298"
+        ResizeMode="NoResize" WindowStyle="None" AllowsTransparency="True"  
+        BorderBrush="Transparent"
+        MouseLeftButtonDown="DragWindow"
+         Loaded="Window_Loaded"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        >
+    
+    <Grid Margin="5">
+        <Grid.Effect>
+            <DropShadowEffect Color="Black" Direction="-5" BlurRadius="10" Opacity="0.8" ShadowDepth="3"/>
+        </Grid.Effect>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.08*"/>
+            <RowDefinition Height="0.02*"/>    <!--第二行是空的-->
+            <RowDefinition Height="0.07*"/>
+            <RowDefinition Height="0.05*"/>
+            <RowDefinition Height="0.05*"/>    <!--第五行是空的-->
+            <RowDefinition Height="0.09*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="0.07*"/>
+        </Grid.RowDefinitions>
+        
+        <Image Name="background" Grid.RowSpan="9" Source="BackGround\1.jpg" Stretch="Fill" />
+        <Grid Grid.Row="5" Grid.RowSpan="4" Background="White" Opacity="0.4"/>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.8*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="0.4*"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="skins_change" Background="Transparent" BorderThickness="0" Style="{StaticResource ButtonStyleOne}" ToolTip="皮肤" Click="skins_change_Click">
+                <Image Height="20" Source="Function\appbar.clothes.shirt.png"/>
+            </Button>
+
+            <Button Grid.Column="2" Height="20" Width="20" Margin="0,0,0,18" VerticalAlignment="Top" ToolTip="最小化" 
+                    Click="Min_Click" Background="Transparent" BorderThickness="0">
+                <Image Source="Function/appbar.minus.png"/>
+            </Button>
+            <Button Grid.Column="3" Height="20" Width="20" Margin="0,0,0,0"  ToolTip="关闭" VerticalAlignment="Top"
+                    Click="Close_Click"  Background="Transparent" BorderThickness="0">
+                <Image Source="Function/appbar.close.png"/>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1" Grid.RowSpan="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="0.2*"/>
+            </Grid.ColumnDefinitions>
+            <Ellipse Grid.RowSpan="2" x:Name="ellipseWithImageBrush" Stroke="White" Height="70" Margin="10,4,0,2" HorizontalAlignment="Left" Width="70" VerticalAlignment="Center">
+                <Ellipse.Fill>
+                    <ImageBrush x:Name="header" ImageSource="header/acca.jpg" Stretch="UniformToFill"></ImageBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Label x:Name="lab_qian" Grid.Column="1" Grid.ColumnSpan="3"  Content="签名" Margin="5,0,0,15" VerticalAlignment="Bottom" Foreground="White" MouseDoubleClick="Profile"></Label>
+            <Label x:Name="lab_name" Grid.Column="1" Grid.ColumnSpan="3" Content="昵称" Margin="5,15,0,0"  VerticalAlignment="Top" FontWeight="ExtraBold" FontSize="18" Foreground="White" Height="55"  ToolTip="编辑资料" MouseDoubleClick="Profile"/>
+
+            
+
+        </Grid>
+        
+        <Grid Grid.Row="5">
+            <Canvas>
+                <TextBox x:Name="txtbox2" Background="Gray" Opacity="0.7" Height="38" Width="288"  BorderBrush="Transparent"
+                     Text="  搜索 : 联系人、讨论组、群、企业" FontSize="16" GotFocus="txtbox2_GotFocus" LostFocus="txtbox2_LostFocus"
+                     VerticalContentAlignment="Center" >
+                    <TextBox.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock>输入QQ号码、姓名/昵称、拼音、Email查找</TextBlock>
+                                <TextBlock>联系人，还可以通过完整的QQ号码查找陌生</TextBlock>
+                                <TextBlock>人</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </TextBox.ToolTip>
+                </TextBox>
+                <Image Name="pic_search" Source="NewFolder/search.png" Canvas.Right="5" Canvas.Top="8" Opacity="0.7" Visibility="Visible"/>
+                <Image Name="pic_offline3" Source="emotion/offline3.png" Canvas.Right="5" Canvas.Top="8" Width="22" Height="22" Opacity="0.7" Visibility="Hidden"/>
+            </Canvas>
+            
+        </Grid>
+        <Grid Grid.Row="6" Height="50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button ToolTip="会话" x:Name="message" Grid.ColumnSpan="2" Background="Transparent" BorderBrush="Transparent" Height="28" Width="80" Click="message_Click" Style="{StaticResource ButtonStyleTwo}">
+                <Button.Content>
+                    <Image Source="NewFolder/message_box_one.png" Height="23"/>
+                </Button.Content>
+            </Button>
+            <Button Name="FriendShow" Grid.Column="2" Grid.ColumnSpan="2" ToolTip="联系人" Background="Transparent" BorderBrush="Transparent" Height="30" Width="80" Style="{StaticResource ButtonStyleTwo}" Click="FriendShow_Click">
+                <Button.Content >
+                    <Image Source="NewFolder/head.png" Height="25"/>
+                </Button.Content>
+            </Button>
+
+            <Button Grid.Column="4" Grid.ColumnSpan="2" ToolTip="群/讨论组" Background="Transparent" BorderBrush="Transparent" Height="29" Width="80" Style="{StaticResource ButtonStyleTwo}" >
+                <Button.Content>
+                    <Image Source="NewFolder/group.png"/>
+                </Button.Content>
+            </Button>
+            
+            
+        </Grid>
+        <Grid Grid.Row="7" >
+            <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Hidden"  Margin="8,0,10,10" Background="Transparent" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+                
+                <ScrollViewer.Content>
+                    <StackPanel Width="270"  HorizontalAlignment="Left" VerticalAlignment="Top" Name="FriendListControl"/>
+                </ScrollViewer.Content>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Button BorderBrush="Transparent" Background="Transparent" ToolTip="主菜单" Style="{StaticResource ButtonStyleTwo}">
+                <Button.Content>
+                    <Image Source="NewFolder/pull_up.png"/>
+                </Button.Content>
+            </Button>
+            <Button Name="setting" Grid.Column="1" BorderBrush="Transparent" Background="Transparent" ToolTip="打开系统设置" Style="{StaticResource ButtonStyleTwo}" Click="setting_Click">
+                <Button.Content>
+                    <Image Source="NewFolder/setting.png" Width="20"/>
+                </Button.Content>
+            </Button>
+            
+            
+            
+            <Button Name="add_new" Grid.Column="7" BorderBrush="Transparent" Background="Transparent" ToolTip="添加"
+                    Click="add_new_Click" Style="{StaticResource ButtonStyleTwo}">
+                <Canvas>
+                    <Image Source="Function\appbar.add.png" Canvas.Left="0"  Height="38" Canvas.Top="-18" Width="28"  />
+                </Canvas>
+            </Button>
+            
+        </Grid>
+    </Grid>
+</Window>

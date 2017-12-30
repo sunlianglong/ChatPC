@@ -1,0 +1,49 @@
+﻿<Window x:Class="QQ_presentation.SettingApp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QQ_presentation"
+        mc:Ignorable="d"
+        Title="SettingApp" Height="360" Width="300" WindowStyle="None" WindowStartupLocation="CenterScreen"
+         MouseLeftButtonDown="DragWindow"
+        AllowsTransparency="True" Background="Transparent" BorderThickness="0" Loaded="Window_Loaded"> 
+    <Grid Margin="5" Background="White">
+        <Grid.Effect>
+            <DropShadowEffect Color="Black" Opacity="0.7" BlurRadius="15" ShadowDepth="3">
+                
+            </DropShadowEffect>
+        </Grid.Effect>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="0.50*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.RowSpan="2">
+            <Image Source="BackGround2\1 (4).jpg" Stretch="UniformToFill"/>
+        </Grid>
+        <Label Grid.Row="0" Grid.RowSpan="2" Background="Transparent" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="config" Foreground="White" FontSize="48" FontWeight="Bold" FontFamily="Tekton Pro Cond" Opacity="0.85">
+            <Label.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="12" Opacity="10"/>
+            </Label.Effect>
+        </Label>
+        <StackPanel  Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Background="Transparent">
+            <Button x:Name="exit" Click="Close_Click" Width="27"  Background="Transparent" Margin="0,-4,10,-8" Height="32" Style="{StaticResource ButtonStyleOne}">
+                <Image Source="Function\appbar.close.png" Height="30" Width="30" Margin="0,5,0,0"/>
+            </Button>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="White" Height="50" Margin="0,-120,0,0">
+            <Image Source="Function\appbar.tower.png" Margin="10" ToolTip="ip地址"/>
+            <TextBox Name="ip_config" Background="Transparent" Text="{Binding Path=ip_config_class}" BorderThickness="0" Width="220" FontWeight="Bold" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="White" Height="50" Margin="0,0,0,0" >
+            <Image Source="Function\appbar.team.png" Margin="10" ToolTip="端口号"/>
+            <TextBox Name="port_config" Text="{Binding Path=port_config_class}" Background="Transparent" BorderThickness="0" Width="220" FontWeight="Bold" HorizontalContentAlignment="Center" TextAlignment="Center" VerticalContentAlignment="Center"/>
+        </StackPanel>
+        <Button Name="finnish" Grid.Row="2" Background="Transparent" Height="50" Width="50" Margin="0,120,0,0" BorderThickness="0" Style="{StaticResource ButtonStyleTwo}" Click="finnish_Click">
+            <Image Source="Function\appbar.location.circle.png" Margin="5" ToolTip="完成设置"/>
+        </Button>
+    </Grid>
+</Window>

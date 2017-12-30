@@ -1,0 +1,118 @@
+﻿<Window x:Class="QQ_presentation.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QQ_presentation"
+        mc:Ignorable="d"
+        Title="Login" Height="350" Width="450"
+        WindowStyle="None" AllowsTransparency="True" BorderThickness="0"
+        MouseLeftButtonDown="DragWindow" Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        >
+    <Grid Margin="5">
+        <Grid.Effect>
+            <DropShadowEffect ShadowDepth="3" Color="Black" Direction="-50" BlurRadius="10" Opacity="0.8"/>
+        </Grid.Effect>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="180"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.RowSpan="2">
+            <Image Grid.Column="0" Grid.Row="0" Stretch="UniformToFill" gif:AnimationBehavior.SourceUri="GIF/101.gif"/>
+        </Grid>
+        <Image Grid.Row="1" Height="15" Width="15" Source="Function\dog_4.png" Margin="120,-10,0,0" />
+        <Image Grid.Row="1" Height="20" Width="20" Source="Function\dog_2_light.png" Margin="50,-10,0,0" />
+        <StackPanel Grid.Row="0" Grid.RowSpan="2" Background="Transparent">
+            <StackPanel.Effect>
+                <DropShadowEffect ShadowDepth="3" Color="Black" BlurRadius="10" Opacity="0.7"/>
+            </StackPanel.Effect>
+            
+            <Label Content="IMCC" Height="200" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="72" FontFamily="Adobe Gothic Std B" FontStretch="SemiExpanded" Opacity="0.95">
+
+            </Label>
+        </StackPanel>
+        <Grid Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.8*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="0.4*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="2" Height="20" Width="20" Margin="0,0,0,0" VerticalAlignment="Top" ToolTip="最小化" 
+                    Click="Min_Click" Background="Transparent" BorderThickness="0">
+                <Image Source="Function/appbar.minus.png"/>
+            </Button>
+            <Button Grid.Column="3" Height="20" Width="20" Margin="0,0,0,0"  ToolTip="关闭" VerticalAlignment="Top"
+                    Click="Close_Click"  Background="Transparent" BorderThickness="0">
+                <Image Source="Function/appbar.close.png"/>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Horizontal" Width="160" HorizontalAlignment="Left" Background="#FFEBF2F9">
+                <Border CornerRadius="100" Margin="20,10,10,21" BorderThickness="0"  BorderBrush="White" Opacity="0.8" Width="118">
+                    <Image Source="header\acca.jpg" Stretch="UniformToFill" Margin="0,0,0,0">
+                        <Image.Clip>
+                            <EllipseGeometry
+                            RadiusX="54"
+                            RadiusY="55"
+                            Center="55,55"/>
+                        </Image.Clip>
+
+                    </Image>
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="0" Color="#FF414141" BlurRadius="8"/>
+                    </Border.Effect>
+                </Border>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Width="300" HorizontalAlignment="Right" Background="#FFEBF2F9">
+                <Grid Height="70" Margin="35,10,54,0" Background="#FFEBF2F9">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="36"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Background="#FFEBF2F9">
+                        <Image Source="Function\appbar.tux.png"/>
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.Column="0" Background="#FFEBF2F9">
+                        <Image Source="Function\appbar.key.old.png"/>
+                    </Grid>
+                    <ComboBox x:Name="usrname" Grid.Row="0" Grid.Column="1" Margin="5,5,5,4" SelectionChanged="usrname_SelectionChanged" IsEditable="True"/>
+
+                    <Button x:Name="iplogin" Grid.Column="2" Grid.Row="0" Background="Transparent" BorderThickness="0" Click="iplogin_Click" ToolTip="获取IP地址">
+                        <Image Source="Function\appbar.tower.png" Stretch="UniformToFill" Height="29" Width="30"/>
+                    </Button>
+
+                    <Button x:Name="help" Grid.Column="2" Grid.Row="1" Background="Transparent" BorderThickness="0" Click="help_Click">
+                        <Image Source="Function\appbar.information.png" Stretch="UniformToFill" Height="25" Width="28"/>
+                    </Button>
+
+                    <PasswordBox x:Name="usrpwd" Grid.Row="1" Grid.Column="1" Margin="5,5,5,4"/>
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="60"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="loginbtn" Height="30" Margin="45,20,0,0" Background="#FF5BCBEC" Content="登陆" Foreground="White" BorderThickness="0" BorderBrush="Transparent" Click="loginbtn_Click" Style="{StaticResource ButtonStyleTwo}"/>
+                    <Button x:Name="newusr" Grid.Column="1" Grid.Row="0" Background="Transparent" BorderThickness="0" Click="newusr_Click" Margin="20,20,0,0" ToolTip="注册" Style="{StaticResource ButtonStyleTwo}" >
+                        <Image Source="Function\appbar.user.add.png" Stretch="Fill" Height="35" Width="31"/>
+                    </Button>
+                </Grid>
+            </StackPanel>
+        </Grid>
+
+
+    </Grid>
+
+
+</Window>
